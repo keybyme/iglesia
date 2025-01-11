@@ -1,0 +1,26 @@
+{% extends 'rv60app/base.html'%}
+
+{% load static  %}
+
+{% block content %}
+
+<h1>Doctrinas</h1>
+
+<br>
+<table class="table table-striped">
+    <tr>
+    <th>Doctrina</th>
+    <th>Descripcion</th>
+    </tr>
+{% for x in doctrinas %}
+    <tr>
+    <td>
+    {{x.titulo}} 
+    </td><td>
+    {{x.maintexto}} 
+    </td>
+    </tr>
+{% endfor%}
+</table>
+{% endblock content %}
+

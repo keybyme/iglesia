@@ -1,0 +1,29 @@
+{% extends 'rv60app/base.html'%}
+
+{% load static  %}
+
+{% block content %}
+
+<h1>Temas Biblicos</h1>
+
+<br>
+<table class="table table-striped">
+    <tr>
+    <th>Tema</th>
+    <th>desde</th>
+    <th>hasta</th>
+    </tr>
+{% for x in temas %}
+    <tr>
+    <td>
+    {{x.titulo}} 
+    </td><td>
+    {{x.verso_start}} 
+    </td><td>
+    {{x.verso_end}} 
+    </td>
+    </tr>
+{% endfor%}
+</table>
+{% endblock content %}
+

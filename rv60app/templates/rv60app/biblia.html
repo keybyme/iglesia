@@ -1,0 +1,21 @@
+{% extends 'rv60app/base.html'%}
+
+{% load static  %}
+
+{% block content %}
+
+<select name="chapter_select" 
+id="" hx-get="chapter" hx-trigger="change" hx-target="#showchapter">
+    {% for x in books %}
+    <option value="{{x.id}}">{{x.libro_es}}</option>
+    {% endfor %}
+</select>
+
+<div id="showchapter">
+
+</div>
+<div id="showverse">
+
+</div>
+{% endblock content %}
+

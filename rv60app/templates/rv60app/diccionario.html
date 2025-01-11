@@ -1,0 +1,26 @@
+{% extends 'rv60app/base.html'%}
+
+{% load static  %}
+
+{% block content %}
+
+<h1>Diccionario</h1>
+
+<br>
+<table class="table table-striped">
+    <tr>
+    <th>Palabra</th>
+    <th>Significado</th>
+    </tr>
+{% for x in diccionarios %}
+    <tr>
+    <td>
+    {{x.palabra}} 
+    </td><td>
+    {{x.definicion}} 
+    </td>
+    </tr>
+{% endfor%}
+</table>
+{% endblock content %}
+

@@ -1,0 +1,41 @@
+{% extends 'rv60app/base.html'%}
+
+{% load static  %}
+
+{% block content %}
+
+<h1>Libros</h1>
+
+<br>
+<table class="table table-striped">
+    <tr>
+    <th>ID</th>
+    <th>Libro</th>
+    <th>Tema Principal</th>
+    <th>Clave</th>
+    <th>Autor</th>
+    <th>Year</th>
+    <th>Division</th>
+    </tr>
+{% for x in libros %}
+    <tr>
+    <td>
+    {{x.id}} 
+    </td><td>
+    {{x.libro_es}} 
+    </td><td>
+    {{x.temaprincipal}} 
+    </td><td>
+    {{x.textos}} 
+    </td><td>
+    {{x.author.profeta}} 
+</td><td>
+    {{x.year}} 
+</td><td>
+    {{x.divisiones.grupo}} 
+    </td>
+    </tr>
+{% endfor%}
+</table>
+{% endblock content %}
+
