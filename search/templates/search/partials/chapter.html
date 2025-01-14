@@ -1,0 +1,8 @@
+<h2>Chapters in {{ chapter_input }}</h2>
+
+<select hx-get="{% url "verse" %}" hx-target="#insert2" hx-trigger="change" name="chapter_input" hx-include="#book-select">
+    <option value="">choose chapter</option>
+    {% for chapter in chapters %}
+    <option value="{{ chapter }}">Chapter {{ chapter }}</li>
+    {% endfor %}
+</ul>

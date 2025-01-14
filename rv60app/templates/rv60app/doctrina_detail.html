@@ -1,0 +1,51 @@
+
+{% extends 'rv60app/base.html' %}
+{% load static %}
+{% block content %}
+
+<h1 class="text-center my-4">{{ doctrina.titulo }}</h1>
+<p>{{ doctrina.maintexto }}</p>
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <h2>Textos</h2>
+             
+                {% for texto in doct_textos %}
+                <div class="px-3" style="font-weight:500; font-size:1.2rem">
+                    {% if forloop.counter0|divisibleby:2 %}
+                    <div class=" py-2 px-3 rounded" style="background:Silver; color:black;">
+                    {% else %} 
+                    <div class=" py-2 px-3 rounded" style="background:WhiteSmoke; color:black;">
+                    {% endif %} 
+                    <p>
+                      {{ texto.texto }} 
+                    </p>
+                    </div>
+                </div>
+                {% endfor %}
+          
+        
+            <h2>Versos</h2>
+             
+                {% for verso in doct_versosx %}
+                <div class="px-3" style="font-weight:500; font-size:1.2rem">
+                    
+                    {% if forloop.counter0|divisibleby:2 %}
+                    <div class=" py-2 px-3 rounded" style="background:Silver; color:black;">
+                    {% else %} 
+                    <div class=" py-2 px-3 rounded" style="background:WhiteSmoke; color:black;">
+                    {% endif %} 
+                    {% for x in verso %}
+                    <p>    
+                     {{ x.libro_es }} {{ x.caps_de_libros }} {{':'}} {{ x.numero }}  {{ x.contenido }}
+                    </p>
+                    </div>
+                </div>    
+                    {% endfor %}
+                {% endfor %}
+             
+        </div>
+    </div>
+</div>
+
+{% endblock content %}

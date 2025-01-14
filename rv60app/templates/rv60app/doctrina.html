@@ -5,7 +5,12 @@
 {% block content %}
 
 <h1>Doctrinas</h1>
-
+<form action="">
+    <input type="text" name="busca_doctrina">
+    <button type="submit">
+        Buscar Doctrina
+    </button>
+</form>
 <br>
 <table class="table table-striped">
     <tr>
@@ -15,7 +20,9 @@
 {% for x in doctrinas %}
     <tr>
     <td>
-    {{x.titulo}} 
+    
+    <a href="{% url "doctrina_detail"  x.id%}">{{x.titulo}}</a>
+        
     </td><td>
     {{x.maintexto}} 
     </td>

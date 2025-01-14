@@ -1,0 +1,11 @@
+ 
+{% if verse %}
+Results: {{ verse|length }}
+{% for x in verse %} 
+{% comment %} <p> {{x.v_idcapitulo.c_idlibro.l_book}}  Chapter: {{x.v_idcapitulo.c_capitulo_desc}} verse: {{x.numero}} . {{x.contenido}}</p> {% endcomment %}
+{% comment %} <p> {{x.v_idcapitulo.c_idlibro.l_book}} {{x.v_idcapitulo.c_capitulo_desc}}:{{x.numero}} {{ x.headline|safe }}</p> {% endcomment %}
+<p><a href="{% url "get_chapter" x.capitulos.libros.libro_es x.capitulos.caps_de_libros%}"> {{x.capitulos.libros.libro_es}} {{x.capitulos.caps_de_libros}}:{{x.numero}}</a> {{ x.headline|safe }}</p>
+
+{% endfor %}
+{% endif %} 
+ 

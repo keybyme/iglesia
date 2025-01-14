@@ -19,5 +19,7 @@ urlpatterns = [
   
   path('tema', views.tema, name="tema"),
   
- 
+  path('porcion/<start>/<end>/<titulo>/', views.porcion, name="porcion"),
+  
+  path('doctrina/<pk>/', views.doctrina_detail_view, name='doctrina_detail'),
 ]

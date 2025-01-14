@@ -1,0 +1,19 @@
+<h3>{{chapters.caps_de_libro}}</h3>
+ 
+    
+    <p class="card-text" style="text-align: justify;">
+        {% for x in verses %}
+        <div class="px-3" style="font-weight:500; font-size:1.2rem">
+            {% if forloop.counter0|divisibleby:2 %}
+            <div class=" py-2 px-3 rounded" style="background:Silver; color:black;">
+            {% else %} 
+            <div class=" py-2 px-3 rounded" style="background:WhiteSmoke; color:black;">
+            {% endif %} 
+            <p>
+            <span class="verse-number" id="marker">{{ x.numero }}</span> <span class="verse-content" style="display: inline;">{{ x.contenido }}</span>
+            </p>
+            </div>
+        </div>
+        {% endfor %}
+    </p>
+    

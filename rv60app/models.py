@@ -108,6 +108,7 @@ class Doct_texto(models.Model):
 class Doct_verso(models.Model):
     verso = models.IntegerField(blank=True, null=True)
     orden_v = models.IntegerField(blank=True, null=True)
+    # versfk = models.ForeignKey(Versiculo, models.DO_NOTHING, blank=True, null=True)
     versofk = models.ForeignKey(Doctrina, models.DO_NOTHING, blank=True, null=True)
  
     def __str__(self):

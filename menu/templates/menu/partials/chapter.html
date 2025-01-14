@@ -1,0 +1,6 @@
+Chapters in {{book}}
+<select name="verse_select"  style="width:30%" id="" hx-get="{% url "verse_menu" %}" hx-trigger="change", class="form-select" hx-target="#showverse">
+    {% for x in chapters %}
+    <option value="{{x.id}}">{{x.caps_de_libros}}</option>
+    {% endfor %}
+</select>

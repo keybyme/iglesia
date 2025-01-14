@@ -1,0 +1,19 @@
+{% extends "rv60app/base.html" %}
+
+{% block content %}
+
+<h3 class="text-center">Busqueda por teclado</h3>
+
+ 
+{% comment %} <form action="" method="get" hx-get="{% url "results" %}" hx-trigger="keyup" hx-target="#results"> {% endcomment %}
+    {% csrf_token %}
+    <input type="text" class="form-control" name="choice"  hx-get="{% url "results" %}" hx-trigger="keyup delay:200ms" hx-target="#results">
+    {% comment %} <button type="submit">go</button> {% endcomment %}
+</form>
+<br>
+<br>
+<div id="results"> 
+</div>
+
+
+{% endblock content %}

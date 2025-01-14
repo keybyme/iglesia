@@ -5,22 +5,24 @@
 {% block content %}
 
 <h1>Temas Biblicos</h1>
-
+<form action="">
+    <input type="text" name="busca_tema">
+    <button type="submit">
+        Buscar Tema
+    </button>
+</form>
 <br>
 <table class="table table-striped">
     <tr>
     <th>Tema</th>
-    <th>desde</th>
-    <th>hasta</th>
     </tr>
 {% for x in temas %}
     <tr>
     <td>
-    {{x.titulo}} 
-    </td><td>
-    {{x.verso_start}} 
-    </td><td>
-    {{x.verso_end}} 
+        
+        <a href="{% url "porcion"  x.verso_start x.verso_end x.titulo%}">{{x.titulo}}</a>
+        {% comment %} <a href="tematico.html?wsstart={{x.verso_start}}&wsend={{x.verso_end}}&wstitulo={{x.titulo}}">{{x.titulo}}</a> {% endcomment %}
+
     </td>
     </tr>
 {% endfor%}

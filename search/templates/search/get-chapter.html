@@ -1,0 +1,35 @@
+
+
+{% extends "rv60app/base.html" %}
+
+
+
+{% block content %}
+<form action="" method="post">
+    {% csrf_token %}
+    <button class="btn btn-success" name="prev" value="prev" type="submit">previous</button>
+    <button class="btn btn-primary"  name="next" value="next"  type="submit">next</button>
+</form>
+
+<div class="d-flex justify-content-center align-items-center">
+    <div class="card" style=" ;">
+        <div class="card-body">
+            <div class="px-3" style="font-weight:500; font-size:1.2rem">
+            <h5 class="card-title">{{ book.libro_es }}:{{ chapter.caps_de_libros }}</h5>
+            {% for x in contenido %}
+            {% if forloop.counter0|divisibleby:2 %}
+            <div class=" py-1 px-1 rounded" style="background:Silver; color:black;">
+            {% else %} 
+            <div class=" py-1 px-1 rounded" style="background:WhiteSmoke; color:black;">
+            {% endif %} 
+            
+            <p class="card-text"><div id="marker">{{ x.numero }} </div> {{ x.contenido }}</p>
+            </div>   
+            {% endfor %}
+        </div>
+        </div>
+    </div>
+</div>
+
+
+{% endblock content %}

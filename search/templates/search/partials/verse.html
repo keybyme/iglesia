@@ -1,0 +1,9 @@
+<h2>Verses in {{book_input}} Ch. {{ chapter_input }}</h2>
+
+<select >
+    <option value="">choose verse</option>
+    {% for x in verses %}
+        <option value="{{ x }}">{{x.verse}}:{{x.text}} </li>
+        
+    {% endfor %}
+</ul>
